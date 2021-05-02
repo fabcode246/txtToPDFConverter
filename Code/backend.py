@@ -71,6 +71,9 @@ class pdfMaker():
 			elif "#" in line:
 				draw.text((10,y), line[2:], font=pdfMaker.head1Font, fill=self.textColor())
 				y += 85
+			elif "-" in line:
+				draw.text(20,y), f"● {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
 			else:
 				draw.text((10,y), line, font=pdfMaker.normalFont, fill=self.textColor())
 				y += 45
