@@ -5,19 +5,15 @@ class pdfMaker():
 	head3Font = ImageFont.truetype("micross.ttf", 50)
 	head2Font = ImageFont.truetype("micross.ttf", 65)
 	head1Font = ImageFont.truetype("micross.ttf", 80)
-	def __init__(self, txtfile):
-		self.txtfile = txtfile
-		self.txt = ""
+	def __init__(self, text):
+		self.text = text
 		self.imgs = []
 		self.processedImgs = []
 		self.pages = []
 		self.lines = []
 
 	def txtRead(self):
-		with open(self.txtfile, "r")as file:
-			self.txt = file.read()
-			file.seek(0)
-			self.lines = file.readlines()
+		self.lines = self.text.split("\n")
 		num = 0
 		for line in self.lines:
 			if "//" in line:
