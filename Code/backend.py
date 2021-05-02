@@ -38,38 +38,9 @@ class pdfMaker():
 			textColor = (0,0,0)
 		return textColor
 
-	def hexToRGB(self, hexcode):
-		rr = hexcode[0:2]
-		gg = hexcode[2:4]
-		bb = hexcode[4:6]
-		val = [rr, gg, bb]
-		RGB = [0,0,0]
-		for color in range(3):
-			for i in range(2):
-				try:
-					if i == 0:
-						RGB[color] += int(val[color][i])*16
-					elif i == 1:
-						RGB[color] += int(val[color][i])
-				except:
-					num = 0
-					if val[color][i] == "a":
-						num = 10
-					if val[color][i] == "b":
-						num = 11
-					if val[color][i] == "c":
-						num = 12
-					if val[color][i] == "d":
-						num = 13
-					if val[color][i] == "e":
-						num = 14
-					if val[color][i] == "f":
-						num = 15
-					if i == 0:
-						RGB[color] += num*16
-					elif i == 1:
-						RGB[color] += num
-		return tuple(RGB)
+	def hexToRGB(self, hexcode:str):
+		r,g,b = hexcode[:2], hexcode[2:4], hexcode[4:]
+		return (int(r, 16), int(r, 16), int(r, 16))
 
 	def backGround(self):
 		background = None
