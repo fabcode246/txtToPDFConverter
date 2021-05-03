@@ -78,7 +78,7 @@ frame2.place(x=0, y=40)
 scrollY = Scrollbar(frame2, bg="#444444")
 scrollY.pack(side="right", fill="y")
 
-textBox = Text(frame2, width=120, height=34, bg ="#757575", selectforeground="#353535", selectbackground="#ff6600", undo=True, yscrollcommand=scrollY.set)
+textBox = Text(frame2, font=("Sans Serif", 16), width=120, height=34, bg ="#757575", selectforeground="#353535", selectbackground="#ff6600", undo=True, yscrollcommand=scrollY.set)
 textBox.pack()
 
 scrollY.config(command=textBox.yview)
