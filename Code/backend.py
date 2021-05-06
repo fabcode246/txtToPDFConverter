@@ -40,7 +40,7 @@ class pdfMaker():
 
 	def hexToRGB(self, hexcode:str):
 		r,g,b = hexcode[:2], hexcode[2:4], hexcode[4:]
-		return (int(r, 16), int(r, 16), int(r, 16))
+		return (int(r, 16), int(g, 16), int(b, 16))
 
 	def backGround(self):
 		background = None
@@ -72,7 +72,37 @@ class pdfMaker():
 				draw.text((10,y), line[2:], font=pdfMaker.head1Font, fill=self.textColor())
 				y += 85
 			elif "-" in line:
-				draw.text((20,y), f"● {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				draw.text((25,y), f"● {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "1" in line:
+				draw.text((25,y), f"1 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "2" in line:
+				draw.text((25,y), f"2 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "3" in line:
+				draw.text((25,y), f"3 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "4" in line:
+				draw.text((25,y), f"4 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "5" in line:
+				draw.text((20,y), f"5 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "6" in line:
+				draw.text((25,y), f"6 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "7" in line:
+				draw.text((25,y), f"7 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "8" in line:
+				draw.text((25,y), f"8 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "9" in line:
+				draw.text((25,y), f"9 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
+				y += 45
+			elif "10" in line:
+				draw.text((25,y), f"10 - {line[2:]}", font=pdfMaker.normalFont, fill=self.textColor())
 				y += 45
 			else:
 				draw.text((10,y), line, font=pdfMaker.normalFont, fill=self.textColor())
